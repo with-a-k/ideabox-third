@@ -3,7 +3,7 @@
 <div id="idea-holder">
 	<ul id="all-ideas">
 		<% @ideas.each do |idea| %>
-			<div id="idea-<%= idea.id %>">
+			<div class="idea" data-id="<%= idea.id %>">
 				<h3><%= idea.title %></h3>
 				<p class="idea-body"><%= idea.body %></p>
 				<h5>Quality: <button class="downvote">Downvote</button> <%= idea.quality %> <button class="upvote">Upvote</button></h5>
