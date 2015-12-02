@@ -1,0 +1,21 @@
+<h1>IdeaBox [THIRD]</h1>
+
+<div id="idea-holder">
+	<ul id="all-ideas">
+		<% @ideas.each do |idea| %>
+			<div id="idea-<%= idea.id %>">
+				<h3><%= idea.title %></h3>
+				<p class="idea-body"><%= idea.body %></p>
+				<h5>Quality: <button class="downvote">Downvote</button> <%= idea.quality %> <button class="upvote">Upvote</button></h5>
+				<button class="edit-idea">Edit</button><button class="delete-idea">Delete</button>
+			</div>
+		<% end %>
+	</ul>
+</div>
+
+<div id="idea-form">
+	<h2>Got an idea?</h2>
+	Title: <input type="text" id="new-idea-title"></input><br>
+	Body:<input type="text" id="new-idea-body"></input><br>
+	<button id="submit-idea">Save</button>
+</div>
