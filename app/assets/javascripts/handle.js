@@ -9,10 +9,14 @@ function handleIdeas() {
 			upvoteIdea($idea);
 		} else if ($(event.target).hasClass('downvote')) {
 			downvoteIdea($idea);
-		} else if ($(event.target).hasClass('edit-idea')) {
+		} else if ($(event.target).hasClass('edit-idea') || $(event.target).hasClass('idea-title') || $(event.target).hasClass('idea-body')) {
 			generateEditForm($idea);
 		} else if ($(event.target).hasClass('save-idea')) {
 			saveEdits($idea);
 		}
-	})
+	});
+
+	$ideas.on('focusout', function (event){
+		saveEdits($(event.target).closest('.idea'));
+	});
 }
