@@ -9,6 +9,10 @@ function handleIdeas() {
 			upvoteIdea($idea);
 		} else if ($(event.target).hasClass('downvote')) {
 			downvoteIdea($idea);
+		} else if ($(event.target).hasClass('edit-idea')) {
+			generateEditForm($idea);
+		} else if ($(event.target).hasClass('save-idea')) {
+			saveEdits($idea);
 		}
 	})
 }

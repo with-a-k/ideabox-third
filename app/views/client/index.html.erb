@@ -7,7 +7,7 @@
 <div id="idea-holder">
 	<% @ideas.each do |idea| %>
 		<div class="idea" data-id="<%= idea.id %>">
-			<h3><%= idea.title %></h3>
+			<h3 class="idea-title"><%= idea.title %></h3>
 			<p class="idea-body"><%= idea.body %></p>
 			<h5>Quality: <button class="downvote">Downvote</button> <span class="quality" data-quality="<%= idea.integer_quality %>"><%= idea.quality %></span> <button class="upvote">Upvote</button></h5>
 				<button class="edit-idea">Edit</button><button class="delete-idea">Delete</button>
@@ -17,7 +17,7 @@
 
 <div id="idea-form">
 	<h2>Got an idea?</h2>
-	Title: <input type="text" id="new-idea-title"></input><br>
-	Body:<input type="text" id="new-idea-body"></input><br>
+	Title: <input type="text" id="new-idea-title"><br>
+	Body:<input type="text" id="new-idea-body"><br>
 	<button id="submit-idea">Save</button>
 </div>

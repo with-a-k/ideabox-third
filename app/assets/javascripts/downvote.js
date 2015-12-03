@@ -7,13 +7,12 @@ function downvoteIdea(idea) {
 
 	var qualityStringer = {
 		0: 'swill',
-		1: 'plausible',
-		2: 'genius'
+		1: 'swill',
+		2: 'plausible'
 	}
 
 	var ideaId = idea.attr('data-id');
-	var newQuality = qualityStringer[parseInt(idea.find('h5 .quality').attr('data-quality')) - 1];
-	console.log(ideaId, newQuality);
+	var newQuality = qualityStringer[parseInt(idea.find('h5 .quality').attr('data-quality'))];
 	$.ajax({
 		type: 'put',
 		url: 'api/v1/ideas/' + ideaId,
@@ -23,7 +22,6 @@ function downvoteIdea(idea) {
 			}
 		},
 		success: function() {
-			console.log('AJAX request succeeded. Reflecting change...')
 			idea.find('h5 .quality').attr('data-quality', qualityNumerizer[newQuality])
 			idea.find('h5 .quality').text(newQuality)
 		}
