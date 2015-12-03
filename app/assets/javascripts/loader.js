@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	pitchIdea();
 	truncateBodies();
-	deleteIdeas();
+	handleIdeas();
+	filterIdeas();
 });

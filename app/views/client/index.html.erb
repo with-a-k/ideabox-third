@@ -1,16 +1,18 @@
 <h1>IdeaBox [THIRD]</h1>
 
+<div id="search-box">
+	Search: <input type="text" id="filter-title"></input>
+</div>
+
 <div id="idea-holder">
-	<ul id="all-ideas">
-		<% @ideas.each do |idea| %>
-			<div class="idea" data-id="<%= idea.id %>">
-				<h3><%= idea.title %></h3>
-				<p class="idea-body"><%= idea.body %></p>
-				<h5>Quality: <button class="downvote">Downvote</button> <%= idea.quality %> <button class="upvote">Upvote</button></h5>
+	<% @ideas.each do |idea| %>
+		<div class="idea" data-id="<%= idea.id %>">
+			<h3><%= idea.title %></h3>
+			<p class="idea-body"><%= idea.body %></p>
+			<h5>Quality: <button class="downvote">Downvote</button> <span class="quality" data-quality="<%= idea.integer_quality %>"><%= idea.quality %></span> <button class="upvote">Upvote</button></h5>
 				<button class="edit-idea">Edit</button><button class="delete-idea">Delete</button>
-			</div>
-		<% end %>
-	</ul>
+		</div>
+	<% end %>
 </div>
 
 <div id="idea-form">
